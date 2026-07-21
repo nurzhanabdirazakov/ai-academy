@@ -1,14 +1,7 @@
 # AI Academy
 
-ChatGPT Edu үшін заманауи, үштілді ресурс-хаб.
+A minimal, multilingual ChatGPT Edu resource hub for higher-education and scientific institutions.
 
-## Негізгі мүмкіндіктер
+The homepage contains only a hero banner, four resource collections, and an About ChatGPT Edu section. Each collection opens on a dedicated page.
 
-- 7 интерактивті ресурс санаты
-- Жаһандық іздеу
-- EN / ҚАЗ / РУС тілдері
-- Quick Actions және Featured Resources бөлімдері
-- Responsive және accessible интерфейс
-- Google Drive-қа тәуелді емес дербес құрылым
-
-Сайт GitHub Pages арқылы `main` тармағының түбірінен жарияланады.
+Static GitHub Pages site; no build step is required.
