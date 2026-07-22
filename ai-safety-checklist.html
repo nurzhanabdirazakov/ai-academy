@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ChatGPT Edu-ды қауіпсіз және академиялық адалдық талаптарына сай қолдануға арналған қысқа чеклист.">
+  <title>AI қауіпсіздік чеклисті — AI Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ai-safety-checklist.css?v=1">
+  <script src="ai-safety-checklist.js?v=1" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>AI Academy</span></a>
+    <a class="back-link" href="research.html">← Зерттеу бөліміне қайту</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">AI SAFETY</p>
+      <h1>AI қауіпсіздік чеклисті</h1>
+      <p>ChatGPT Edu-мен жұмыс аяқталғанға дейін төмендегі тармақтарды тексеріңіз.</p>
+    </section>
+
+    <section class="progress-panel" aria-live="polite">
+      <div><strong id="progress-label">0 / 20</strong><span>орындалды</span></div>
+      <div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div>
+      <strong id="progress-percent">0%</strong>
+    </section>
+
+    <form id="checklist" class="checklist">
+      <fieldset>
+        <legend><span>01</span> Құпиялылық және деректер</legend>
+        <label><input type="checkbox"> <span>Жеке және құпия ақпарат енгізілген жоқ.</span></label>
+        <label><input type="checkbox"> <span>Зерттеу қатысушыларының деректері жасырындандырылды.</span></label>
+        <label><input type="checkbox"> <span>Ұйымның жариялауға болмайтын құжаттары жүктелген жоқ.</span></label>
+        <label><input type="checkbox"> <span>Файлдарда парольдер, байланыс деректері немесе идентификаторлар жоқ.</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>02</span> Фактілерді тексеру</legend>
+        <label><input type="checkbox"> <span>AI ұсынған негізгі фактілер тәуелсіз дереккөздермен тексерілді.</span></label>
+        <label><input type="checkbox"> <span>Сандар, даталар және атаулар бастапқы материалмен салыстырылды.</span></label>
+        <label><input type="checkbox"> <span>Болжамдар нақты фактілерден бөлек белгіленді.</span></label>
+        <label><input type="checkbox"> <span>Маңызды қорытындыларды зерттеуші өзі қайта қарады.</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>03</span> Дереккөздер</legend>
+        <label><input type="checkbox"> <span>Барлық авторлар, мақалалар, DOI және сілтемелер тексерілді.</span></label>
+        <label><input type="checkbox"> <span>Ойдан шығарылған немесе табылмайтын дереккөздер алынып тасталды.</span></label>
+        <label><input type="checkbox"> <span>Дәйексөздер түпнұсқа мәтінмен салыстырылды.</span></label>
+        <label><input type="checkbox"> <span>Авторлық құқық пен лицензия талаптары сақталды.</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>04</span> Академиялық адалдық</legend>
+        <label><input type="checkbox"> <span>AI көмегі ұйымның немесе журналдың ережесіне сай көрсетілді.</span></label>
+        <label><input type="checkbox"> <span>AI жасаған мәтін авторлық талдаудың орнына қолданылған жоқ.</span></label>
+        <label><input type="checkbox"> <span>Плагиатқа және мағыналық бұрмалауға жол берілген жоқ.</span></label>
+        <label><input type="checkbox"> <span>Зерттеу әдісі мен нәтижелері шынайы сипатталды.</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>05</span> Соңғы тексеру</legend>
+        <label><input type="checkbox"> <span>Жауапта біржақты, кемсітуші немесе зиянды тұжырымдар жоқ.</span></label>
+        <label><input type="checkbox"> <span>Нәтиженің шектеулері ашық көрсетілді.</span></label>
+        <label><input type="checkbox"> <span>Мәтін мақсатқа, аудиторияға және контекстке сәйкес келеді.</span></label>
+        <label><input type="checkbox"> <span>Соңғы шешімді адам қабылдады.</span></label>
+      </fieldset>
+    </form>
+
+    <section id="complete-message" class="complete-message" hidden>
+      <strong>Чеклист аяқталды</strong>
+      <span>Материал қауіпсіздік талаптары бойынша тексерілді.</span>
+    </section>
+
+    <button id="reset-button" class="reset-button" type="button">Қайта бастау</button>
+  </main>
+</body>
+</html>
