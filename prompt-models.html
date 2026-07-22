@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Зерттеушілерге арналған интерактивті промпт модельдері мен РАҚМЕТ конструкторы">
+  <title>Промпт модельдері — AI Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="prompt-models.css?v=1"><script src="prompt-models.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog" data-i18n="skip">Мазмұнға өту</a>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">⌘</span><span>AI Academy</span></a>
+    <nav><a href="index.html" data-i18n="home">Басты бет</a><a href="research.html" data-i18n="research">Зерттеу және инновация</a><a href="#catalog" data-i18n="models">Модельдер</a></nav>
+    <div class="top-actions"><button id="my-prompts-open" class="top-button" type="button">▢ <span data-i18n="myPrompts">Менің промпттарым</span><b id="saved-count">0</b></button><button id="theme-toggle" class="round-button" type="button" aria-label="Түсті режим">◐</button><select id="language-select" aria-label="Language"><option value="kk">ҚАЗ</option><option value="ru">РУС</option><option value="en">EN</option></select></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><a class="back-link" href="research.html">← <span data-i18n="backResearch">Зерттеу бөліміне оралу</span></a><p class="eyebrow">AI ACADEMY · PROMPT ENGINEERING</p><h1 data-i18n="heroTitle">Промпт модельдері</h1><p class="hero-text" data-i18n="heroText">Зерттеу міндетіне сай нақты, құрылымды және сенімді промпт құрастырыңыз. Дайын модельді таңдаңыз, өрістерді толтырыңыз және нәтижені көшіріп алыңыз.</p><div class="hero-actions"><button class="primary" id="choose-model" type="button" data-i18n="chooseModel">Модельді таңдау</button><button class="secondary" id="start-builder" type="button">✦ <span data-i18n="buildPrompt">Промпт құрастыру</span></button><button class="link-button" id="see-all" type="button" data-i18n="seeAll">Барлық модельдерді көру ↓</button></div></div>
+      <div class="hero-visual" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="rakmet-stack"><span class="r">Р</span><span class="a">А</span><span class="q">Қ</span><span class="m">М</span><span class="e">Е</span><span class="t">Т</span></div><div class="visual-label"><b>РАҚМЕТ</b><small>Structured Prompt Model</small></div></div>
+      <div class="hero-stats"><span><strong>8</strong><small data-i18n="authorModels">авторлық модель</small></span><span><strong>6</strong><small data-i18n="rakmetSteps">РАҚМЕТ кезеңі</small></span><span><strong>3</strong><small data-i18n="languages">академиялық тіл</small></span></div>
+    </section>
+
+    <section class="featured-model" id="rakmet-overview">
+      <div class="section-heading"><div><p class="eyebrow">FEATURED MODEL</p><h2 data-i18n="rakmetFull">РАҚМЕТ — зерттеуге арналған құрылымды промпт моделі</h2></div><p data-i18n="rakmetIntro">Рөлден бастап тексеруге дейінгі алты кезең кәсіби промпттың негізгі компоненттерін бір логикаға біріктіреді.</p></div>
+      <div class="rakmet-timeline" id="rakmet-timeline"></div>
+      <div class="featured-actions"><button class="primary" data-open-model="rakmet" type="button">✦ <span data-i18n="openBuilder">Конструкторды ашу</span></button><button class="secondary" data-example-model="rakmet" type="button" data-i18n="viewExample">Мысалды көру</button></div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="catalogLabel">МОДЕЛЬДЕР КАТАЛОГЫ</p><h2 data-i18n="selectTaskModel">Зерттеу міндетіне сай модель таңдаңыз</h2></div><button class="diagnostic-button" id="diagnostic-open" type="button">◇ <span data-i18n="whichModel">Қай модель маған керек?</span></button></div>
+      <div class="catalog-tools"><label class="search"><span>⌕</span><input id="model-search" type="search" placeholder="Модель атауы немесе мақсаты бойынша іздеу..."><kbd>⌘ K</kbd></label><div class="filters" id="filters"></div></div>
+      <div class="model-grid" id="model-grid"></div><div class="empty-state hidden" id="catalog-empty"><span>⌕</span><h3 data-i18n="nothingFound">Модель табылмады</h3><button id="reset-filter" type="button" data-i18n="reset">Фильтрді тазалау</button></div>
+    </section>
+
+    <section class="builder-section hidden" id="builder-section" aria-labelledby="builder-title">
+      <div class="builder-top"><div><p class="eyebrow" data-i18n="interactiveBuilder">ИНТЕРАКТИВТІ КОНСТРУКТОР</p><h2 id="builder-title"></h2></div><div class="builder-top-actions"><button id="favorite-model" type="button">♡ <span data-i18n="favorite">Таңдаулыға қосу</span></button><button id="close-builder" type="button">×</button></div></div>
+      <div class="progress-mobile"><div id="mobile-progress"></div><span id="mobile-progress-text"></span></div>
+      <div class="builder-workspace">
+        <aside class="step-sidebar"><div class="model-mini"><span id="model-acronym"></span><div><b id="model-name"></b><small id="model-purpose"></small></div></div><div id="step-navigation"></div><div class="safety-mini"><span>✓</span><p data-i18n="safetyMini">AI берген фактілер мен сілтемелерді тексеріңіз.</p></div></aside>
+        <section class="form-panel"><div class="step-head"><span id="step-count"></span><h3 id="step-title"></h3><p id="step-description"></p></div><form id="step-form" novalidate></form><div class="validation-message hidden" id="validation-message">!</div><div class="step-controls"><button class="secondary" id="prev-step" type="button">← <span data-i18n="previous">Артқа</span></button><button class="primary" id="next-step" type="button"><span data-i18n="next">Келесі</span> →</button></div></section>
+        <aside class="preview-panel"><div class="preview-head"><div><p data-i18n="livePreview">LIVE PREVIEW</p><b data-i18n="promptPreview">Промптты алдын ала қарау</b></div><button id="collapse-preview" type="button">⌃</button></div><pre id="prompt-preview"></pre><div class="completion"><span data-i18n="completion">Толтырылуы</span><div><i id="completion-bar"></i></div><b id="completion-value">0%</b></div><div class="safety-card"><b data-i18n="academicIntegrity">AI Safety және академиялық адалдық</b><p data-i18n="safetyText">Жасанды интеллект ұсынған фактілерді, сілтемелерді және ғылыми қорытындыларды тексеріңіз. Құпия зерттеу деректерін енгізбеңіз.</p></div><button class="primary copy-preview" id="copy-preview" type="button">⧉ <span data-i18n="copyPrompt">Промптты көшіру</span></button></aside>
+      </div>
+      <div class="result-actions" id="result-actions"><button class="primary" id="copy-final" type="button">⧉ <span data-i18n="copy">Көшіру</span></button><button id="open-chatgpt" type="button">↗ ChatGPT</button><button id="edit-result" type="button">✎ <span data-i18n="edit">Редакциялау</span></button><button id="shorten-result" type="button">− <span data-i18n="shorten">Қысқарту</span></button><button id="expand-result" type="button">＋ <span data-i18n="expand">Кеңейту</span></button><button id="save-result" type="button">♡ <span data-i18n="save">Сақтау</span></button><button id="download-txt" type="button">↓ TXT</button><button id="export-word" type="button">W Word</button><button id="restart-builder" type="button">↺ <span data-i18n="restart">Қайта бастау</span></button></div>
+    </section>
+  </main>
+
+  <dialog id="details-dialog" class="modal"><button class="modal-close" data-close type="button">×</button><p class="eyebrow" id="details-category"></p><h2 id="details-title"></h2><p id="details-purpose"></p><div class="detail-schema" id="details-schema"></div><h3 data-i18n="whenUse">Қолдану жағдайлары</h3><ul id="details-uses"></ul><button class="primary" id="details-open-builder" type="button" data-i18n="openBuilder">Конструкторды ашу</button></dialog>
+  <dialog id="examples-dialog" class="modal wide-modal"><button class="modal-close" data-close type="button">×</button><p class="eyebrow">EXAMPLES</p><h2 id="examples-title"></h2><div class="example-tabs"><button class="active" data-example-tab="short" type="button" data-i18n="shortPrompt">Қысқа промпт</button><button data-example-tab="extended" type="button" data-i18n="extendedPrompt">Кеңейтілген промпт</button><button data-example-tab="professional" type="button" data-i18n="professionalPrompt">Кәсіби промпт</button></div><pre id="example-content"></pre><button class="primary" id="copy-example" type="button">⧉ <span data-i18n="copyExample">Мысалды көшіру</span></button></dialog>
+  <dialog id="diagnostic-dialog" class="modal wide-modal"><button class="modal-close" data-close type="button">×</button><p class="eyebrow">MODEL FINDER</p><h2 data-i18n="diagnosticTitle">Қай модель сізге сәйкес?</h2><div class="diagnostic-progress"><i id="diagnostic-bar"></i></div><div id="diagnostic-content"></div><div class="diagnostic-actions"><button class="secondary" id="diagnostic-prev" type="button" data-i18n="previous">Артқа</button><button class="primary" id="diagnostic-next" type="button" data-i18n="next">Келесі</button></div><div class="diagnostic-result hidden" id="diagnostic-result"></div></dialog>
+  <dialog id="my-prompts-dialog" class="modal prompts-modal"><button class="modal-close" data-close type="button">×</button><p class="eyebrow">LOCAL WORKSPACE</p><h2 data-i18n="myPrompts">Менің промпттарым</h2><label class="saved-search"><span>⌕</span><input id="saved-search" type="search" placeholder="Сақталған промпттарды іздеу..."></label><div id="saved-prompts-list"></div><div class="empty-state" id="saved-empty"><span>▢</span><p data-i18n="noSaved">Әзірге сақталған промпт жоқ.</p></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite">Промпт көшірілді!</div>
+</body></html>
